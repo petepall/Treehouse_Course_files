@@ -57,11 +57,11 @@
 # """I need you to create a new function for me.
 # This one will be named sillycase and it'll take a single string as an argument.
 
-# sillycase should return the same string but the first half should be lowercased 
-# and the second half should be uppercased. For example, with the string 
+# sillycase should return the same string but the first half should be lowercased
+# and the second half should be uppercased. For example, with the string
 # \"Treehouse\", sillycase would return \"treeHOUSE\".
 
-# Don't worry about rounding your halves, but remember that indexes should be 
+# Don't worry about rounding your halves, but remember that indexes should be
 # integers. You'll want to use the int() function or integer division, //."
 # """
 
@@ -74,3 +74,74 @@
 
 # print(sillycase("Treehouse"))
 
+# course_minutes = {
+#     "Python basics": 232,
+#     "Django basics": 237,
+#     "Flask basics": 189,
+#     "Java basics": 133,
+# }
+
+# for course, time in course_minutes.items():
+#     print(f"{course:20}: {time:5}")
+
+
+# E.g. word_count("I do not like it Sam I Am") gets back a dictionary like:
+# {'i': 2, 'do': 1, 'it': 1, 'sam': 1, 'like': 1, 'not': 1, 'am': 1}
+# Lowercase the string to make it easier.
+# def word_count(data):
+#     word_counter = {}
+#     for word in data.lower().split():
+#         word_counter[word] = data.lower().split().count(word)
+
+#     return word_counter
+
+
+# print(word_count("I do not like it Sam I Am"))
+
+
+# The dictionary will look something like:
+# {'Andrew Chalkley': ['jQuery Basics', 'Node.js Basics'],
+#  'Kenneth Love': ['Python Basics', 'Python Collections']}
+#
+# Each key will be a Teacher and the value will be a list of courses.
+
+def num_teachers(data):
+    return len(data)
+
+
+def num_courses(data):
+    return sum(map(len, data.values()))
+
+
+def courses(data):
+    courses_list = [item for course in data.values() for item in course]
+    return courses_list
+
+
+def most_courses(data):
+    courses_count = 0
+    teacher_with_most_courses = ''
+
+    for teacher, courses in data.items():
+        if len(courses) > courses_count:
+            teacher_with_most_courses = teacher
+            courses_count = len(courses)
+
+    return teacher_with_most_courses
+
+
+def stats(data):
+    statistics = []
+    for teacher, courses in data.items():
+        statistics.append([teacher, len(courses)])
+    return statistics
+
+
+data = {'Andrew Chalkley': ['jQuery Basics', 'Node.js Basics'],
+        'Kenneth Love': ['Python Basics', 'Python Collections', 'test']}
+
+# print(num_teachers(data))
+# print(num_courses(data))
+# print(courses(data))
+# print(most_courses(data))
+print(stats(data))
