@@ -147,3 +147,29 @@
 # print(stats(data))
 
 
+# import random
+
+
+# def get_location(cells):
+#     return random.sample(cells, 3)
+
+
+# print(get_location((1, 2, 3, 4, 5, 2, 4, 6)))
+
+# def move(player, direction):
+#     x, y, hp = player
+#     dirx, diry = direction
+
+#     if x + dirx < 0 or x + dirx > 9 or y + diry < 0 or y + diry > 9:
+#         hp -= 5
+#     else:
+#         x += dirx
+#         y += diry
+
+#     return x, y, hp
+
+
+# print(move((1, 1, 10), (-1, 0)))
+# print(move((0, 1, 10), (-1, 0)))
+# print(move((0, 9, 5), (0, 1)))
+
