@@ -105,43 +105,45 @@
 #
 # Each key will be a Teacher and the value will be a list of courses.
 
-def num_teachers(data):
-    return len(data)
+# def num_teachers(data):
+#     return len(data)
 
 
-def num_courses(data):
-    return sum(map(len, data.values()))
+# def num_courses(data):
+#     return sum(map(len, data.values()))
 
 
-def courses(data):
-    courses_list = [item for course in data.values() for item in course]
-    return courses_list
+# def courses(data):
+#     courses_list = [item for course in data.values() for item in course]
+#     return courses_list
 
 
-def most_courses(data):
-    courses_count = 0
-    teacher_with_most_courses = ''
+# def most_courses(data):
+#     courses_count = 0
+#     teacher_with_most_courses = ''
 
-    for teacher, courses in data.items():
-        if len(courses) > courses_count:
-            teacher_with_most_courses = teacher
-            courses_count = len(courses)
+#     for teacher, courses in data.items():
+#         if len(courses) > courses_count:
+#             teacher_with_most_courses = teacher
+#             courses_count = len(courses)
 
-    return teacher_with_most_courses
-
-
-def stats(data):
-    statistics = []
-    for teacher, courses in data.items():
-        statistics.append([teacher, len(courses)])
-    return statistics
+#     return teacher_with_most_courses
 
 
-data = {'Andrew Chalkley': ['jQuery Basics', 'Node.js Basics'],
-        'Kenneth Love': ['Python Basics', 'Python Collections', 'test']}
+# def stats(data):
+#     statistics = []
+#     for teacher, courses in data.items():
+#         statistics.append([teacher, len(courses)])
+#     return statistics
+
+
+# data = {'Andrew Chalkley': ['jQuery Basics', 'Node.js Basics'],
+#         'Kenneth Love': ['Python Basics', 'Python Collections', 'test']}
 
 # print(num_teachers(data))
 # print(num_courses(data))
 # print(courses(data))
 # print(most_courses(data))
-print(stats(data))
+# print(stats(data))
+
+
