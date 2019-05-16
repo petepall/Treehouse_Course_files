@@ -1,5 +1,6 @@
 import random
 import os
+import time
 
 
 CELLS = [(0, 0), (1, 0), (2, 0), (3, 0), (4, 0),
@@ -22,11 +23,11 @@ def move_player(player, move):
     x, y = player
     if move == "LEFT":
         x -= 1
-    elif move == "RIGHT":
+    if move == "RIGHT":
         x += 1
-    elif move == "UP":
+    if move == "UP":
         y -= 1
-    elif move == "DOWN":
+    if move == "DOWN":
         y += 1
 
     return x, y
@@ -38,46 +39,75 @@ def get_moves(player):
     x, y = player
     if x == 0:
         moves.remove("LEFT")
-    elif x == 4:
+    if x == 4:
         moves.remove("RIGHT")
-    elif y == 0:
+    if y == 0:
         moves.remove("UP")
-    elif y == 4:
+    if y == 4:
         moves.remove("DOWN")
 
     return moves
 
 
+def draw_map(player):
+    print(' _'*5)
+    tile = '|{}'
+
+    for cell in CELLS:
+        x, y = cell
+        if x < 4:
+            line_end = ''
+            if cell == player:
+                output = tile.format('X')
+            else:
+                output = tile.format('_')
+        else:
+            line_end = '\n'
+            if cell == player:
+                output = tile.format('X|')
+            else:
+                output = tile.format('_|')
+        print(output, end=line_end)
+
+
 def main():
-    # TODO: draw grid
-    # TODO: draw the player in the grid
-    # TODO: check for win/loss
-    # TODO: clear screen and redraw the gird
-
     monster, door, player = get_location()
+    playing = True
 
-    while True:
+    while playing:
         clear_screen()
+        draw_map(player)
         valid_moves = get_moves(player)
-        print("Welcome to the dungeon!")
         print(f"You're currently in room {player}")
         print(f"You can move {', '.join(valid_moves)}")
 
         move = input("> ").upper()
 
-        if move == "QUIT":
+        if move == "QUIT" or move == 'Q':
             break
         if move in valid_moves:
             player = move_player(player, move)
+            if player == monster:
+                print("\nYou lose! The monster ate you")
+                time.sleep(1)
+                playing = False
+
+            if player == door:
+                print("\nYou win! you have found the magic door")
+                time.sleep(1)
+                playing = False
         else:
             print("\n ** Walls are hard! Don't run into them! **\n")
-
-        # TODO: Good move? Change the player position
-        # TODO: Bad move? Don't change anything!
-        # TODO: On the door? They win!
-        # TODO: On the monster? They lose!
-        # TODO: Otherwise, loop back around
+            time.sleep(1)
+    else:
+        if input("Play again [Y/n]: ") != 'n':
+            print("Thanks for playing the game!")
+            main()
 
 
 if __name__ == "__main__":
+    clear_screen()
+    print("Welcome to the dungeon!")
+    input("Press enter to start the game")
+    clear_screen()
     main()
