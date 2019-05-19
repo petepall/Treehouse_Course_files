@@ -185,3 +185,17 @@
 #     else:
 #         print(_, end='')
 
+# nums = range(5, 101)
+# halves = []
+
+# for num in nums:
+#     halves.append(num / 2)
+
+# print([num/2 for num in nums])
+
+# rows = range(4)
+# cols = range(10)
+
+# print([(x, y) for y in rows for x in cols])
+
+# print([(letter, number) for number in range(1, 5) for letter in 'abc'])
