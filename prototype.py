@@ -199,3 +199,52 @@
 # print([(x, y) for y in rows for x in cols])
 
 # print([(letter, number) for number in range(1, 5) for letter in 'abc'])
+
+# data_list = ["apple", 5.2, "dog", 8]
+
+
+# def combiner(data):
+#     word = ""
+#     add = 0
+#     for item in data:
+#         if isinstance(item, str):
+#             word += item
+#         else:
+#             add += item
+
+#     return word + str(add)
+
+
+# print(combiner(data_list))
+
+
+# class Letter:
+#     def __init__(self, pattern=None):
+#         self.pattern = pattern
+
+#     def __str__(self):
+#         morse = []
+#         for item in self.pattern:
+#             if item == ".":
+#                 morse.append("dot")
+#             if item == "_":
+#                 morse.append("dash")
+#         return '-'.join(morse)
+    
+#     def __contains__(self, item):
+#         return item in self.pattern
+
+#     def __iter__(self):
+#         yield from self.pattern
+
+
+# class S(Letter):
+#     def __init__(self):
+#         pattern = ['.', '.', '.']
+#         super().__init__(pattern)
+
+
+# test = Letter(['.', '_', '.'])
+# for item in test:
+#     print(item)
+
