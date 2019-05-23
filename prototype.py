@@ -248,3 +248,28 @@
 # for item in test:
 #     print(item)
 
+# class Board:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+#         self.cells = []
+#         for y in range(self.height):
+#             for x in range(self.width):
+#                 self.cells.append((x, y))
+
+#     def __iter__(self):
+#         for y in range(self.height):
+#             for x in range(self.width):
+#                 yield x, y
+
+
+# class TicTacToe(Board):
+#     def __init__(self, width=3, height=3):
+#         return super().__init__(width, height)
+
+
+# test = Board(3, 3)
+# for x, y in test:
+#     print(x, y)
+
+
