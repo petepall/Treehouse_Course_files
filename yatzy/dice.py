@@ -7,7 +7,7 @@ class Die:
             raise ValueError("Must have at lease 2 sides")
         if not isinstance(sides, int):
             raise ValueError("Sides must be a whole number")
-        self.value = value  # or random.randint(1, sides)
+        self.value = value or random.randint(1, sides)
 
     def __int__(self):
         return self.value
