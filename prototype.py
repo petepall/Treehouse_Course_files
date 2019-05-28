@@ -284,3 +284,24 @@
 
 # numbers(5, r'\w')
 
+# import re
+
+# # EXAMPLE:
+# # >>> find_words(4, "dog, cat, baby, balloon, me")
+# # ['baby', 'balloon']
+# def find_words(count, data):
+#     found_words = re.findall(r'\w{%s,}' % count, data)
+    
+#     print(found_words)
+
+
+# find_words(4, "dog, cat, baby, balloon, me")
+
+# import re
+
+# string = '1234567890'
+
+# good_numbers = re.findall(r'\d*[^5-7]', string)
+
+# print(good_numbers)
+
