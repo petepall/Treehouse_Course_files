@@ -34,4 +34,3 @@ with open(path.join(path.dirname(__file__), 'names.txt'), mode='r',
 
     print(line)
     print(line.groupdict())
-

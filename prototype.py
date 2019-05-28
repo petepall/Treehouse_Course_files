@@ -230,7 +230,7 @@
 #             if item == "_":
 #                 morse.append("dash")
 #         return '-'.join(morse)
-    
+
 #     def __contains__(self, item):
 #         return item in self.pattern
 
@@ -291,7 +291,7 @@
 # # ['baby', 'balloon']
 # def find_words(count, data):
 #     found_words = re.findall(r'\w{%s,}' % count, data)
-    
+
 #     print(found_words)
 
 
@@ -304,4 +304,3 @@
 # good_numbers = re.findall(r'\d*[^5-7]', string)
 
 # print(good_numbers)
-
