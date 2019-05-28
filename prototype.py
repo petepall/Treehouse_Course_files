@@ -272,4 +272,15 @@
 # for x, y in test:
 #     print(x, y)
 
+# import re
+
+# ser = 'Peter Pallen'
+
+# def numbers(count, data):
+#     pattern = data * count
+#     print(f'r"{pattern}"')
+#     print(re.search(pattern, ser))
+
+
+# numbers(5, r'\w')
 
