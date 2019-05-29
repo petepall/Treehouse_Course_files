@@ -304,3 +304,52 @@
 # good_numbers = re.findall(r'\d*[^5-7]', string)
 
 # print(good_numbers)
+
+# import re
+
+
+# string = 'Perotto, Pier Giorgio'
+
+# names = re.match(r'(\w+), ([-\w ]+)', string)
+# print(names)
+
+
+# import re
+
+
+# string = '''Love, Kenneth, kenneth+challenge@teamtreehouse.com, 555-555-5555, @kennethlove
+# Chalkley, Andrew, andrew@teamtreehouse.co.uk, 555-555-5556, @chalkers
+# McFarland, Dave, dave.mcfarland@teamtreehouse.com, 555-555-5557, @davemcfarland
+# Kesten, Joy, joy@teamtreehouse.com, 555-555-5558, @joykesten'''
+
+# contacts = re.search(r'''
+#     (?P<email>[-\w\d+.]+@[-\w\d.]+),\s
+#     (?P<phone>\d{3}-\d{3}-\d{4})
+#     ''', string, re.X | re.M)
+
+# twitters = re.search(r'''
+#     (?P<twitter>@[\w\d]+)$
+# ''', string, re.X | re.M)
+
+# print(contacts)
+# print(contacts.groupdict())
+# print(twitters.groupdict())
+
+import re
+
+
+string = '''
+Stewart Pinchback, Pinckney Benton: 18
+Love, Kenneth: 20
+Chalkley, Andrew: 25
+McFarland, Dave: 10
+Kesten, Joy: 22
+'''
+
+players = re.search(r'''
+    (?P<first_name>\w+\s*\w*),\s
+    (?P<last_name>\w+\s*\w*):\s
+    (?P<score>\d+)
+    ''', string, re.M | re.X)
+
+print(players.groupdict())

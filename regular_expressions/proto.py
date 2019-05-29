@@ -24,13 +24,59 @@ with open(path.join(path.dirname(__file__), 'names.txt'), mode='r',
     #     [^\t\n]  # Ignore tabs and newlines
     #  """, data, re.X))
 
-    line = re.search(r'''
-        ^(?P<name>[-\w ]*,\s[-\w ]+)\t  # Last and first names
+    data_format = re.compile(r'''
+        ^(?P<name>(?P<last>[-\w ]*),\s(?P<first>[-\w ]+))\t  # Last and first names
         (?P<email>[-\w\d.+]+@[-\w\d.]+)\t  # Email
         (?P<phone>\(?\d{3}\)?-?\s?\d{3}-\d{4})?\t  # Phone number
         (?P<job>[\w\s]+,\s[\w\s.]+)?\t  # Job and company
         (?P<twitter>@[\w\d]+)?$  # Twitter
-    ''', data, re.X | re.M)
+    ''', re.X | re.M)
 
-    print(line)
-    print(line.groupdict())
+    # print(re.search(line, data).groupdict())
+    # print(line.search(data).groupdict())
+
+    # for match in line.finditer(data):
+    #     print('{first} {last} <{email}>'.format(**match.groupdict()))
+
+
+class Person:
+    """Represents a persons data"""
+
+    def __init__(self, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def __str__(self):
+        string = ''
+        for key, value in self.__dict__.items():
+            string += f"{key}: {value}\n"
+        return string
+
+    @classmethod
+    def construct(cls, list, expr, data):
+        for match in expr.finditer(data):
+            list.append(cls(**match.groupdict()))
+
+
+class AdressBook(list):
+    """Represents the addressbook"""
+
+    def search(self, term=None):
+        if term:
+            result = []
+            for person in self:
+                for key, value in person.__dict__.items():
+                    try:
+                        if term in value and person not in result:
+                            result.append(person)
+                    except (AttributeError, TypeError):
+                        continue
+            return result
+        return self
+
+
+if __name__ == "__main__":
+    address_book = AdressBook()
+    Person.construct(address_book, data_format, data)
+    for item in address_book.search('kenneth'):
+        print(item)
