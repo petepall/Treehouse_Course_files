@@ -1,9 +1,0 @@
-{
-    "python.pythonPath": "C:\\Users\\PeterPallen\\.virtualenvs\\Treehouse_Course_files-TtKehXC6\\Scripts\\python.exe",
-    "python.autoComplete.extraPaths": [
-        ".//yatzy//",
-        ".",
-        ".//tests",
-        ".//",
-    ],
-}
