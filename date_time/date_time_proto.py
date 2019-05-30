@@ -63,10 +63,49 @@ import datetime
 # formating = "%Y-%m-%d %H:%M:%S.%f"
 # print(from_string(str(now), formating))
 
-def time_tango(given_date, given_time):
-    return datetime.datetime.combine(given_date, given_time)
+# def time_tango(given_date, given_time):
+#     return datetime.datetime.combine(given_date, given_time)
 
 
-date1 = datetime.date(2019, 5, 30)
-time1 = datetime.time(20, 0, 0)
-print(time_tango(date1, time1))
+# date1 = datetime.date(2019, 5, 30)
+# time1 = datetime.time(20, 0, 0)
+# print(time_tango(date1, time1))
+
+starter = datetime.datetime(2015, 10, 21, 16, 29)
+
+
+# def delorean(leap_ahead_hours):
+#     global starter
+#     starter += datetime.timedelta(hours=leap_ahead_hours)
+#     return starter
+
+
+# print(delorean(2))
+
+# Remember, you can't set "years" on a timedelta!
+# Consider a year to be 365 days.
+
+# Example
+# time_machine(5, "minutes") => datetime(2015, 10, 21, 16, 34)
+# starter = datetime.datetime(2015, 10, 21, 16, 29)
+
+
+# def time_machine(time_diff, time_type):
+#     global starter
+#     result = 0
+
+#     if time_type.lower() == 'years':
+#         result = starter + datetime.timedelta(days=time_diff * 365)
+#     if time_type.lower() == 'days':
+#         result = starter + datetime.timedelta(days=time_diff)
+#     if time_type.lower() == 'hours':
+#         result = starter + datetime.timedelta(hours=time_diff)
+#     if time_type.lower() == 'minutes':
+#         result = starter + datetime.timedelta(minutes=time_diff)
+#     if time_type.lower() == 'seconds':
+#         result = starter + datetime.timedelta(seconds=time_diff)
+#     return result
+
+
+# print(time_machine(5, 'minutes'))
+
