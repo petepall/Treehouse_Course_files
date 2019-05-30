@@ -37,3 +37,36 @@ import datetime
 
 # print(minutes(date1, date2))
 
+# now = datetime.datetime(2014, 10, 15, 20, 11, 45, 410327)
+
+# print(now.strftime('%m/%d/%y'))
+
+# birthday = datetime.datetime.strptime('2015-04-21', '%Y-%m-%d')
+# print(birthday)
+
+# birthday_party = datetime.datetime.strptime('2015-04-21 12:00',
+#                                             '%Y-%m-%d %H:%M')
+# print(birthday_party)
+
+# def to_string(data):
+#     return data.strftime('%d %B %Y')
+
+
+# def from_string(data, formating):
+#     return datetime.datetime.strptime(data, formating)
+
+
+# now = datetime.datetime(2019, 5, 30, 19, 11, 45, 410327)
+# print(to_string(now))
+
+# now = datetime.datetime.now()
+# formating = "%Y-%m-%d %H:%M:%S.%f"
+# print(from_string(str(now), formating))
+
+def time_tango(given_date, given_time):
+    return datetime.datetime.combine(given_date, given_time)
+
+
+date1 = datetime.date(2019, 5, 30)
+time1 = datetime.time(20, 0, 0)
+print(time_tango(date1, time1))
