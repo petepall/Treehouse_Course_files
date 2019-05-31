@@ -1,7 +1,8 @@
-from questions import Add, Multiply
-from typing import Tuple, Union
 import datetime
 import random
+from typing import Tuple, Union
+
+from questions import Add, Multiply
 
 
 class Quiz:
@@ -29,14 +30,14 @@ class Quiz:
     def ask(self,
             question: Union[Add, Multiply]
             ) -> Tuple[bool, datetime.timedelta]:
-        correct = False
-        question_start = datetime.datetime.now()
-        answer = input(question.text + ' = ')
+        correct: bool = False
+        question_start: datetime.datetime = datetime.datetime.now()
+        answer: str = input(question.text + ' = ')
         # check the answer
         if answer == str(question.answer):
             correct = True
 
-        question_end = datetime.datetime.now()
+        question_end: datetime.datetime = datetime.datetime.now()
         return correct, question_end - question_start
 
     def total_correct(self) -> int:
@@ -57,4 +58,5 @@ class Quiz:
               f"seconds total.")
 
 
-Quiz().take_quiz()
+if __name__ == "__main__":
+    Quiz().take_quiz()
