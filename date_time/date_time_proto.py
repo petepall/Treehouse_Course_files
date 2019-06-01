@@ -1,4 +1,5 @@
 import datetime
+import pytz
 
 
 # treehouse_start = datetime.datetime.now()
@@ -71,7 +72,7 @@ import datetime
 # time1 = datetime.time(20, 0, 0)
 # print(time_tango(date1, time1))
 
-starter = datetime.datetime(2015, 10, 21, 16, 29)
+# starter = datetime.datetime(2015, 10, 21, 16, 29)
 
 
 # def delorean(leap_ahead_hours):
@@ -108,4 +109,73 @@ starter = datetime.datetime(2015, 10, 21, 16, 29)
 
 
 # print(time_machine(5, 'minutes'))
+
+# def timestamp_oldest(*args):
+#     # posix = []
+#     # for item in args:
+#     #     posix.append(item)
+
+#     # posix.sort()
+#     posix = [item for item in args]
+#     posix.sort()
+#     return datetime.datetime.fromtimestamp(posix[0])
+
+
+# timestamp = 1545730073, 1545720073, 1545730078, 1345730073
+# print(timestamp_oldest(1545730073, 1545720073, 1545730078, 1345730073))
+
+# pacific = datetime.timezone(datetime.timedelta(hours=-8))
+# eastern = datetime.timezone(datetime.timedelta(hours=-5))
+
+# naive = datetime.datetime(2014, 4, 21, 9)
+# print(naive)
+
+# aware = datetime.datetime(2014, 4, 21, 9, tzinfo=pacific)
+# print(aware)
+# print(aware.astimezone(eastern))
+
+
+# pacific = pytz.timezone('US/Pacific')
+# eastern = pytz.timezone('US/Eastern')
+
+# format = '%Y-%m-%d %H:%M:%S %Z%z'
+
+# utc = pytz.utc
+
+# start = pacific.localize(datetime.datetime(2014, 4, 21, 9, 0))
+# print(start.strftime(format))
+
+# start_eastern = start.astimezone(eastern)
+# print(start_eastern.strftime(format))
+
+# start_utc = datetime.datetime(2014, 4, 21, 1, tzinfo=utc)
+# print(start_utc.strftime(format))
+
+# start_pacific = start_utc.astimezone(pacific)
+# print(start_pacific.strftime(format))
+
+# auckland = pytz.timezone('Pacific/Auckland')
+# mumbai = pytz.timezone('Asia/Calcutta')
+
+# apollo_13_naive = datetime.datetime(1970, 4, 11, 14, 13)
+# print(apollo_13_naive.strftime(format))
+
+# apollo_13_eastern = eastern.localize(apollo_13_naive)
+# print(apollo_13_eastern.strftime(format))
+
+# apollo_13_utc = apollo_13_eastern.astimezone(utc)
+# print(apollo_13_utc.strftime(format))
+# print(apollo_13_utc.astimezone(auckland).strftime(format))
+
+# for item in pytz.all_timezones:
+#     print(item)
+
+# print(pytz.country_timezones['be'])
+
+
+# fmt = '%m-%d %H:%M %Z%z'
+# starter = datetime.datetime(2015, 10, 21, 4, 29)
+# pacific = pytz.timezone('US/Pacific')
+# local = pacific.localize(starter)
+# print(local)
 
