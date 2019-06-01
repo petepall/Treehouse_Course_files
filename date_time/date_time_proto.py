@@ -179,3 +179,12 @@ import pytz
 # local = pacific.localize(starter)
 # print(local)
 
+starter = pytz.utc.localize(datetime.datetime(2015, 10, 21, 23, 29))
+
+
+def to_timezone(time_zone_name):
+    global starter
+    return starter.astimezone(pytz.timezone(time_zone_name))
+
+
+print(to_timezone('US/Pacific'))
