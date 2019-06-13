@@ -48,6 +48,7 @@ def top_student():
     student = Student.select().order_by(Student.points.desc()).get()
     return student
 
+
 if __name__ == "__main__":
     db.connect()
     db.create_tables([Student], safe=True)
