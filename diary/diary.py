@@ -7,8 +7,8 @@ from datetime import datetime
 from pathlib import Path
 from time import sleep
 
-from peewee import DateTimeField, Model, SqliteDatabase, TextField
 from colorama import Fore, Style, init
+from peewee import DateTimeField, Model, SqliteDatabase, TextField
 
 db = SqliteDatabase(f"{Path().absolute()}\\diary\\diary.db")
 
