@@ -1,5 +1,8 @@
 {
     "python.pythonPath": ".venv\\Scripts\\python.exe",
+    "python.autoComplete.extraPaths":[
+        ".//testing",
+    ],
     "python.linting.flake8Args": [
         "--ignore=F405"
     ],
