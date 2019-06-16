@@ -335,22 +335,33 @@
 # print(contacts.groupdict())
 # print(twitters.groupdict())
 
-import re
+# import re
 
 
-string = '''
-Stewart Pinchback, Pinckney Benton: 18
-Love, Kenneth: 20
-Chalkley, Andrew: 25
-McFarland, Dave: 10
-Kesten, Joy: 22
-Peter, Pallen: 27
-'''
+# string = '''
+# Stewart Pinchback, Pinckney Benton: 18
+# Love, Kenneth: 20
+# Chalkley, Andrew: 25
+# McFarland, Dave: 10
+# Kesten, Joy: 22
+# Peter, Pallen: 27
+# '''
 
-players = re.search(r'''
-    (?P<first_name>\w+\s*\w*),\s
-    (?P<last_name>\w+\s*\w*):\s
-    (?P<score>\d+)
-    ''', string, re.M | re.X)
+# players = re.search(r'''
+#     (?P<first_name>\w+\s*\w*),\s
+#     (?P<last_name>\w+\s*\w*):\s
+#     (?P<score>\d+)
+#     ''', string, re.M | re.X)
 
-print(players.groupdict())
+# print(players.groupdict())
+
+
+# def average(num_list):
+#     """Return the average for a list of numbers
+    
+#     >>> average([1, 2])
+#     1.5
+    
+#     """
+#     return sum(num_list) / len(num_list)
+
