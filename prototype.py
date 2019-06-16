@@ -344,7 +344,7 @@ Love, Kenneth: 20
 Chalkley, Andrew: 25
 McFarland, Dave: 10
 Kesten, Joy: 22
-Peter, Pallen: 26
+Peter, Pallen: 27
 '''
 
 players = re.search(r'''
