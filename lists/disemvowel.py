@@ -8,11 +8,12 @@ def disemvowel(word):
     #     else:
     #         new_word += letter
 
-    new_word = [char for char in word if char.lower() not in vowels]
-    new_word = ''.join(new_word)
+    # new_word = [char for char in word if char.lower() not in vowels]
+    # new_word = ''.join(new_word)
 
-    word = new_word
-    return word
+    # word = new_word
+    # return word
+    return "".join([char for char in word if char.lower() not in vowels])
 
 
 print(disemvowel("RVqnUDo"))
