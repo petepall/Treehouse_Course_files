@@ -4,6 +4,10 @@ class Person:
         self.last = last
         self.age = age
 
+    @property
+    def email(self):
+        return f"{self.first}.{self.last}@email.com"
+
     def __str__(self):
         return f"{self.first}, {self.last} is {self.age} old"
 
@@ -101,3 +105,5 @@ print()
 
 # print(repr(trainer1))
 print(trainer1.__repr__())
+print()
+print(person1.email)
