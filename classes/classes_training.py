@@ -99,4 +99,5 @@ print(trainer1.print_trainer())
 print(trainer1)
 print()
 
-print(repr(trainer1))
+# print(repr(trainer1))
+print(trainer1.__repr__())
