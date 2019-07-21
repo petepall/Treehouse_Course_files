@@ -3,7 +3,7 @@ from pathlib import Path
 from peewee import (CharField, IntegerField, IntegrityError, Model,
                     SqliteDatabase)
 
-db = SqliteDatabase(f'{Path().absolute()}//databases//students.db')
+db = SqliteDatabase(f'{Path().resolve()}//databases//students.db')
 
 
 class Student(Model):
